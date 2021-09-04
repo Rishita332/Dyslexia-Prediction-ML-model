@@ -1,0 +1,182 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import streamlit as st"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import time"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def local_css(file_name):\n",
+    "    with open(file_name) as f:\n",
+    "        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def remote_css(url):\n",
+    "    st.markdown(f'<link href=\"{url}\" rel=\"stylesheet\">', unsafe_allow_html=True)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def icon(icon_name):\n",
+    "    st.markdown(f'<i class=\"material-icons\">{icon_name}</i>', unsafe_allow_html=True)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "FileNotFoundError",
+     "evalue": "[Errno 2] No such file or directory: 'style.css'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-9-d7cc1f98de96>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mlocal_css\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"style.css\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m \u001b[0mremote_css\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'https://fonts.googleapis.com/icon?family=Material+Icons'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m<ipython-input-3-8e6dc8b1ddae>\u001b[0m in \u001b[0;36mlocal_css\u001b[0;34m(file_name)\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mdef\u001b[0m \u001b[0mlocal_css\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfile_name\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m     \u001b[0;32mwith\u001b[0m \u001b[0mopen\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfile_name\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0mf\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m         \u001b[0mst\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmarkdown\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34mf'<style>{f.read()}</style>'\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0munsafe_allow_html\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mTrue\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: 'style.css'"
+     ]
+    }
+   ],
+   "source": [
+    "local_css(\"style.css\")\n",
+    "remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "ModuleNotFoundError",
+     "evalue": "No module named 'pages'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-7-423eaed2cb57>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0;32mimport\u001b[0m \u001b[0mpages\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mhome\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mpages\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mquiz\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mpages\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msurvey\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mpages\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlogin\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'pages'"
+     ]
+    }
+   ],
+   "source": [
+    "import pages.home\n",
+    "import pages.quiz\n",
+    "import pages.survey\n",
+    "import pages.login\n",
+    "\n",
+    "\n",
+    "PAGES = {\n",
+    "    \"Login\": pages.login,\n",
+    "    \"Home\": pages.home,\n",
+    "    \"Quiz\": pages.quiz,\n",
+    "    \"Survey\": pages.survey\n",
+    "    \n",
+    "}\n",
+    "\n",
+    "# st.sidebar.title(\"Pages\")\n",
+    "# radio = st.sidebar.radio(label=\"\", options=[\"Set A\", \"Set B\", \"Add them\"])\n",
+    "\n",
+    "# session_state = SessionState.get(a=0, b=0)  # Pick some initial values.\n",
+    "\n",
+    "# if radio == \"Set A\":\n",
+    "#     session_state.a = float(st.text_input(label=\"What is a?\", value=session_state.a))\n",
+    "#     st.write(f\"You set a to {session_state.a}\")\n",
+    "# elif radio == \"Set B\":\n",
+    "#     session_state.b = float(st.text_input(label=\"What is b?\", value=session_state.b))\n",
+    "#     st.write(f\"You set b to {session_state.b}\")\n",
+    "# elif radio == \"Add them\":\n",
+    "#     st.write(f\"a={session_state.a} and b={session_state.b}\")\n",
+    "#     button = st.button(\"Add a and b\")\n",
+    "#     if button:\n",
+    "#         st.write(f\"a+b={session_state.a+session_state.b}\")\n",
+    "        \n",
+    "        \n",
+    "        \n",
+    "\n",
+    "\n",
+    "def main():\n",
+    "\n",
+    "    st.sidebar.title(\"DyslexiaML\")\n",
+    "    st.sidebar.text(\" \"\"AI for Dyslexia\"\" \")\n",
+    "\n",
+    "    st.sidebar.title(\"Navigation\")\n",
+    "    page = st.sidebar.radio(\"Go to\", list(PAGES.keys()))\n",
+    "\n",
+    "    \n",
+    "\n",
+    "    with st.spinner(text = f\"Loading {page} ...\"):\n",
+    "        \n",
+    "        PAGES[page].main()\n",
+    "        \n",
+    "\n",
+    "    st.sidebar.title(\"About App\")\n",
+    "\n",
+    "    st.sidebar.info(\n",
+    "        \"\"\"\n",
+    "        This App uses Machine Learning to Detect Dyslexia.  \n",
+    "        It uses Streamlit for implemention of beatiful and easy web app.\n",
+    "        \"\"\"\n",
+    "    )"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
