@@ -1,2 +1,0 @@
-# Dyslexia-prediction
- 
